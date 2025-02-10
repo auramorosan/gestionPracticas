@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Persona de Contacto</title>
+</head>
+<body>
+
+    <form id="contactoForm">
+        <input type="text" name="id_contacto" placeholder="ID de Persona de Contacto" required 
+               pattern="^[a-zA-Z0-9]{1,20}$" 
+               title="Debe ingresar un identificador único válido (letras y números, hasta 20 caracteres).">
+      
+        <input type="text" name="nombre_completo" placeholder="Nombre Completo" required 
+               pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+               title="Debe ingresar un nombre válido (solo letras y espacios, mínimo 2 caracteres).">
+      
+        <input type="text" name="cargo" placeholder="Cargo o Puesto" required 
+               pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+               title="Debe ingresar un cargo válido (solo letras y espacios, mínimo 2 caracteres).">
+      
+        <select name="departamento" required>
+            <option value="" disabled selected>Seleccione Departamento</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Administración">Administración</option>
+            <option value="Operaciones">Operaciones</option>
+        </select>
+      
+        <input type="email" name="correo" placeholder="Correo Electrónico" required>
+      
+        <input type="tel" name="telefono" placeholder="Número de Teléfono" required>
+      
+        <input type="text" name="extension" placeholder="Extensión Telefónica">
+      
+        <input type="text" name="direccion" placeholder="Dirección de la Oficina">
+      
+        <input type="text" name="horario" placeholder="Horario de Trabajo">
+      
+        <select name="nivel_acceso">
+            <option value="" disabled selected>Seleccione Nivel de Acceso</option>
+            <option value="Administrador de personal">Administrador de personal</option>
+            <option value="Acceso limitado">Acceso limitado</option>
+            <option value="Acceso total">Acceso total</option>
+        </select>
+      
+        <select name="relacion">
+            <option value="" disabled selected>Seleccione Relación con la Empresa</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Contratista">Contratista</option>
+            <option value="Consultor">Consultor</option>
+            <option value="Directivo">Directivo</option>
+        </select>
+      
+        <input type="date" name="fecha_ingreso">
+      
+        <input type="file" name="foto_perfil" accept="image/*">
+      
+        <textarea name="observaciones" placeholder="Observaciones Adicionales"></textarea>
+      
+        <select name="estado">
+            <option value="" disabled selected>Seleccione Estado</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+            <option value="En licencia">En licencia</option>
+            <option value="Baja">Baja</option>
+        </select>
+      
+        <textarea name="notas" placeholder="Notas Adicionales"></textarea>
+    
+        <button type="submit">Guardar Persona de Contacto</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script src="enviaRRHH.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir contacto de RRHH</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, button, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<!-- Formulario para añadir contacto RRHH -->
+  <div id="rrhhForm" class="">
+    <h2>Añadir Información del contacto RRHH</h2>
+    <form>
+        <!-- ID de Persona de Contacto -->
+        <input type="text" placeholder="ID de Persona de Contacto" required 
+               pattern="^[a-zA-Z0-9]{1,20}$" 
+               title="Debe ingresar un identificador único válido (letras y números, hasta 20 caracteres).">
+      
+        <!-- Nombre Completo -->
+        <input type="text" placeholder="Nombre Completo" required 
+               pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+               title="Debe ingresar un nombre válido (solo letras y espacios, mínimo 2 caracteres).">
+      
+        <!-- Cargo o Puesto -->
+        <input type="text" placeholder="Cargo o Puesto" required 
+               pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+               title="Debe ingresar un cargo válido (solo letras y espacios, mínimo 2 caracteres).">
+      
+        <!-- Departamento -->
+        <select required>
+            <option value="" disabled selected>Seleccione Departamento</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Administración">Administración</option>
+            <option value="Operaciones">Operaciones</option>
+        </select>
+      
+        <!-- Correo Electrónico -->
+        <input type="email" placeholder="Correo Electrónico" required 
+               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+               title="Debe ingresar un correo electrónico válido.">
+      
+        <!-- Número de Teléfono -->
+        <input type="tel" placeholder="Número de Teléfono" required 
+               pattern="^\(\+?[0-9]{1,4}\)\s?[0-9]{6,15}$" 
+               title="Debe ingresar un número de teléfono válido (ejemplo: (+34) 612345678).">
+      
+        <!-- Extensión Telefónica -->
+        <input type="text" placeholder="Extensión Telefónica">
+      
+        <!-- Dirección de la Oficina -->
+        <input type="text" placeholder="Dirección de la Oficina">
+      
+        <!-- Horario de Trabajo -->
+        <input type="text" placeholder="Horario de Trabajo">
+      
+        <!-- Nivel de Acceso -->
+        <select>
+            <option value="" disabled selected>Seleccione Nivel de Acceso</option>
+            <option value="Administrador de personal">Administrador de personal</option>
+            <option value="Acceso limitado">Acceso limitado</option>
+            <option value="Acceso total">Acceso total</option>
+            <!-- Agrega más opciones según los niveles de acceso -->
+        </select>
+      
+        <!-- Relación con la Empresa -->
+        <select>
+            <option value="" disabled selected>Seleccione Relación con la Empresa</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Contratista">Contratista</option>
+            <option value="Consultor">Consultor</option>
+            <option value="Directivo">Directivo</option>
+            <!-- Agrega más opciones según las relaciones disponibles -->
+        </select>
+      
+        <!-- Fecha de Ingreso a la Empresa -->
+        <input type="date" placeholder="Fecha de Ingreso a la Empresa">
+      
+        <!-- Foto de Perfil -->
+        <input type="file" accept="image/*">
+      
+        <!-- Observaciones Adicionales -->
+        <textarea placeholder="Observaciones Adicionales"></textarea>
+      
+        <!-- Estado de la Persona de Contacto -->
+        <select>
+            <option value="" disabled selected>Seleccione Estado</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+            <option value="En licencia">En licencia</option>
+            <option value="Baja">Baja</option>
+        </select>
+      
+        <!-- Notas Adicionales -->
+        <textarea placeholder="Notas Adicionales"></textarea>
+    
+        <!-- Botón de Guardar -->
+        <button type="submit">Guardar Persona de Contacto</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Profesores</title>
+</head>
+<body>
+    <h2>Registro de Profesores</h2>
+
+    <form id="profesorForm" enctype="multipart/form-data">
+        <input type="text" name="nombre_completo" placeholder="Nombre Completo" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$">
+        <input type="text" name="numero_identificacion" placeholder="Número de Identificación" required pattern="^[a-zA-Z0-9]{1,20}$">
+        <input type="email" name="correo" placeholder="Correo Electrónico" required>
+        <input type="tel" name="telefono" placeholder="Número de Teléfono">
+        <textarea name="direccion" placeholder="Dirección"></textarea>
+        <input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento">
+
+        <select name="genero">
+            <option value="" disabled selected>Seleccione Género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+            <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+        </select>
+
+        <select name="rol" required>
+            <option value="" disabled selected>Seleccione Rol</option>
+            <option value="Profesor">Profesor</option>
+            <option value="Coordinador">Coordinador</option>
+            <option value="Jefe de Departamento">Jefe de Departamento</option>
+        </select>
+
+        <select name="departamento">
+            <option value="" disabled selected>Seleccione Departamento</option>
+            <option value="Matemáticas">Matemáticas</option>
+            <option value="Lengua">Lengua</option>
+            <option value="Ciencias Sociales">Ciencias Sociales</option>
+        </select>
+
+        <select name="tipo_contrato">
+            <option value="" disabled selected>Seleccione Tipo de Contrato</option>
+            <option value="Tiempo Completo">Tiempo Completo</option>
+            <option value="Medio Tiempo">Medio Tiempo</option>
+            <option value="Sustituto">Sustituto</option>
+        </select>
+
+        <input type="date" name="fecha_ingreso" placeholder="Fecha de Ingreso">
+
+        <select name="estado_profesor" required>
+            <option value="" disabled selected>Estado del Profesor</option>
+            <option value="Activo">Activo</option>
+            <option value="En licencia">En licencia</option>
+            <option value="Inactivo">Inactivo</option>
+        </select>
+
+        <input type="file" name="foto_perfil" accept="image/*">
+        <textarea name="notas" placeholder="Notas Adicionales"></textarea>
+
+        <input type="password" name="contraseña" placeholder="Contraseña" required
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+
+        <select name="centro" required>
+            <option value="" disabled selected>Seleccione Centro Educativo</option>
+            <option value="IES Domenico Scarlatti">IES Domenico Scarlatti</option>
+            <option value="IES Domenico Scarlatii">IES Domenico Scarlatti</option>
+        </select>
+
+        <button type="submit">Guardar Profesor</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script src="enviaProfe.js"></script>
+</body>
+</html>

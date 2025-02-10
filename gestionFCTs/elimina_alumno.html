@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Alumno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        select, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Selecciona un alumno para eliminar:</h2>
+        <select id="selectAlumno">
+            <option value="" disabled selected>Seleccione un alumno</option>
+            <option value="1">Alumno 1</option>
+            <option value="2">Alumno 2</option>
+            <option value="3">Alumno 3</option>
+        </select>
+        <button id="btnEliminar">Eliminar Alumno</button>
+    </div>
+
+    <script>
+        document.getElementById("btnEliminar").addEventListener("click", function() {
+            const alumnoSeleccionado = document.getElementById("selectAlumno").value;
+            if (alumnoSeleccionado) {
+                alert("Se eliminaría el alumno con ID: " + alumnoSeleccionado);
+            } else {
+                alert("Seleccione un alumno antes de eliminar.");
+            }
+        });
+    </script>
+</body>
+</html>

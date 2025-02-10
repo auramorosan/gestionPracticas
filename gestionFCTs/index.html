@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, button, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Gestion de FCT</h1>
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <select id="role" required>
+          <option value="" disabled selected>Selecciona tu rol</option>
+          <option value="profesor">Profesor</option>
+          <option value="tutor">Tutor</option>
+          <option value="admin">Administrador</option>
+        </select>
+        <button type="submit">Ingresar</button>
+      </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+      // Obtiene los valores de los campos
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      // Valida las credenciales y el rol de momento sin acceder a la base de datos
+      if(username === 'admin' && password === '1234' && role === 'admin'){
+        // Redirige a menu_admin.html si es administrador
+        window.location.href = 'menu_admin.html';
+      }else if(username === 'profe' && password === '1234' && role === 'profesor'){
+        // Redirige a menu_profe.html si es profesor
+        window.location.href = 'menu_profe.html';
+      }else if(username === 'tutor' && password === '1234' && role === 'tutor'){
+        // Redirige a menu_tutor.html si es tutor
+        window.location.href = 'menu_tutor.html';
+      }else{
+        // Muestra un mensaje de error si las credenciales o rol no son válidos
+        alert('Credenciales incorrectas o rol no autorizado.');
+      }
+    });
+  </script>
+</body>
+</html>

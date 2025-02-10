@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Empresa</title>
+</head>
+<body>
+    <h2>Modificar Empresa</h2>
+    <form id="empresaForm">
+        <input type="text" id="id_empresa" placeholder="ID de la Empresa" required>
+        <input type="text" id="nombre_empresa" placeholder="Nombre de la Empresa" required>
+        <input type="text" id="razon_social" placeholder="Razón Social">
+        
+        <select id="tipo_empresa">
+            <option value="" disabled selected>Seleccione Tipo de Empresa</option>
+            <option value="Sociedad Anónima">Sociedad Anónima</option>
+            <option value="Sociedad Limitada">Sociedad Limitada</option>
+            <option value="Autónomo">Autónomo</option>
+        </select>
+
+        <input type="text" id="nif_cif" placeholder="Número de Identificación Fiscal" required>
+        <input type="email" id="correo" placeholder="Correo Electrónico" required>
+        <input type="tel" id="telefono" placeholder="Número de Teléfono">
+        <textarea id="direccion" placeholder="Dirección" required></textarea>
+        <input type="text" id="ciudad" placeholder="Ciudad" required>
+        <input type="text" id="codigo_postal" placeholder="Código Postal" required>
+        
+        <select id="pais" required>
+            <option value="" disabled selected>Seleccione País</option>
+            <option value="España">España</option>
+            <option value="Rumania">Rumania</option>
+            <option value="Francia">Francia</option>
+        </select>
+
+        <input type="date" id="fecha_constitucion" placeholder="Fecha de Constitución">
+
+        <select id="sector">
+            <option value="" disabled selected>Seleccione Sector o Industria</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Salud">Salud</option>
+            <option value="Educación">Educación</option>
+        </select>
+
+        <input type="number" id="num_empleados" placeholder="Número de Empleados">
+        <input type="url" id="sitio_web" placeholder="Sitio Web">
+        <input type="file" id="logo_empresa" accept="image/*">
+        <input type="text" id="representante_legal" placeholder="Representante Legal">
+        
+        <select id="estado_empresa" required>
+            <option value="" disabled selected>Seleccione Estado de la Empresa</option>
+            <option value="Activa">Activa</option>
+            <option value="Inactiva">Inactiva</option>
+            <option value="En Liquidación">En Liquidación</option>
+        </select>
+
+        <input type="date" id="fecha_alta" placeholder="Fecha de Alta">
+        <textarea id="notas" placeholder="Notas Adicionales"></textarea>
+
+        <button type="submit">Guardar Empresa</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script src="enviaEmpresa.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realiza convenio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        label, select, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Realiza convenio</h2>
+    <form id="realizaConvenioForm">
+        <label for="empresa">Nombre empresa:</label>
+        <select id="empresa" required>
+            <option value="empresa1">Empresa 1</option>
+            <option value="empresa2">Empresa 2</option>
+            <option value="empresa3">Empresa 3</option>
+        </select>
+
+        <label for="cifEmpresa">CIF empresa:</label>
+        <input type="text" id="cifEmpresa" required>
+
+        <label for="dirEmpresa">Direccion empresa:</label>
+        <input type="text" id="dirEmpresa" required>
+
+        <label for="tipoEntidad">Tipo entidad:</label>
+        <select id="tipoEntidad" required>
+            <option value="sa">SA</option>
+            <option value="sl">SL</option>
+            <option value="srl">SRL</option>
+        </select>
+
+        <label for="nomRep">Nombre representante:</label>
+        <input type="text" id="nomRep" required>
+
+        <label for="dniRep">DNI representante:</label>
+        <input type="text" id="dniRep" required>
+
+        <label for="cargoRep">Cargo representante:</label>
+        <input type="text" id="cargoRep" required>
+
+        <label for="persContacto">Persona contacto:</label>
+        <input type="text" id="persContacto" required>
+
+        <label for="mailContacto">Mail contacto:</label>
+        <input type="text" id="mailContacto" required>
+
+        <label for="telContacto">Telefono contacto:</label>
+        <input type="number" id="telContacto" required>
+
+        <label for="firma">Firma:</label>
+        <select id="firma" required>
+            <option value="empresa">Empresa</option>
+            <option value="direccion">Direccion</option>
+            <option value="comMadrid">Comunidad de Madrid</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+        
+        <!--el boton guarda los datos en una base de datos -->
+    </form>
+</body>
+</html>

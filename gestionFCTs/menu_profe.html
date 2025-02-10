@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Profesores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #3a21d9;
+        }
+
+        .links-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 25px;
+            color: white;
+            background-color: #3b6de2;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #0d1879;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a la Página de Profesores</h1>
+        <p>Selecciona una opción:</p>
+        <div class="links-container">
+            <!--redireccion a las paginas segun seleccion-->
+            <a href="guarda_alumno.html">Añadir un alumno</a>
+            <a href="modifica_alumno.html">Modificar datos de un alumno</a>
+            <a href="elimina_alumno.html">Eliminar datos de un alumno</a>
+            <a href="modifica_empresa.html">Modificar datos de la empresa</a>
+            <a href="elimina_empresa.html">Eliminar una empresa</a>
+            <a href="modifica_RRHH.html">Modificar datos de contacto RRHH</a>
+            <a href="elimina_RRHH.html">Eliminar datos de contacto RRHH</a>
+        </div>
+    </div>
+</body>
+</html>

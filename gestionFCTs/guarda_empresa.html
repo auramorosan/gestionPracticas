@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añade empresa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, button, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<!-- Formulario para Tutores -->
+  <div id="empresaForm" class="">
+    <h2>Añadir Información de la Empresa</h2>
+    <form>
+      <!-- ID de la Empresa -->
+      <input type="text" placeholder="ID de la Empresa" required
+            pattern="^[A-Za-z0-9]{1,20}$" 
+            title="Debe ingresar un identificador único válido (letras y números, hasta 20 caracteres).">
+
+      <!-- Nombre de la Empresa -->
+      <input type="text" placeholder="Nombre de la Empresa" required
+            pattern="^[A-Za-z0-9\s]+$" 
+            title="Debe ingresar un nombre válido (letras y números, con espacios).">
+
+      <!-- Razón Social -->
+      <input type="text" placeholder="Razón Social" 
+            pattern="^[A-Za-z0-9\s]+$" 
+            title="Debe ingresar la razón social (letras y números, con espacios).">
+
+      <!-- Tipo de Empresa -->
+      <select>
+          <option value="" disabled selected>Seleccione Tipo de Empresa</option>
+          <option value="Sociedad Anónima">Sociedad Anónima</option>
+          <option value="Sociedad Limitada">Sociedad Limitada</option>
+          <option value="Autónomo">Autónomo</option>
+      </select>
+
+      <!-- Número de Identificación Fiscal (NIF / CIF) -->
+      <input type="text" placeholder="Número de Identificación Fiscal" required
+            pattern="^[A-Za-z0-9]{1,20}$" 
+            title="Debe ingresar un NIF/CIF válido (letras y números).">
+
+      <!-- Correo Electrónico -->
+      <input type="email" placeholder="Correo Electrónico" required
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+            title="Debe ingresar un correo electrónico válido.">
+
+      <!-- Número de Teléfono -->
+      <input type="tel" placeholder="Número de Teléfono" 
+            pattern="^\+?[0-9]{1,4}\s?[0-9]{6,15}$" 
+            title="Debe ingresar un número de teléfono válido (ejemplo: +34 912345678).">
+
+      <!-- Dirección -->
+      <textarea placeholder="Dirección" required></textarea>
+
+      <!-- Ciudad -->
+      <input type="text" placeholder="Ciudad" required
+            pattern="^[A-Za-z\s]+$" 
+            title="Debe ingresar una ciudad válida (solo letras y espacios).">
+
+      <!-- Código Postal -->
+      <input type="text" placeholder="Código Postal" required
+            pattern="^[0-9]{5}$" 
+            title="Debe ingresar un código postal válido (5 dígitos).">
+
+      <!-- País -->
+      <select required>
+          <option value="" disabled selected>Seleccione País</option>
+          <option value="España">España</option>
+          <option value="Rumania">Rumania</option>
+          <option value="Francia">Francia</option>
+      </select>
+
+      <!-- Fecha de Constitución -->
+      <input type="date" placeholder="Fecha de Constitución">
+
+      <!-- Sector o Industria -->
+      <select>
+          <option value="" disabled selected>Seleccione Sector o Industria</option>
+          <option value="Tecnología">Tecnología</option>
+          <option value="Salud">Salud</option>
+          <option value="Educación">Educación</option>
+      </select>
+
+      <!-- Número de Empleados -->
+      <input type="number" placeholder="Número de Empleados" 
+            pattern="^[0-9]+$" 
+            title="Debe ingresar un número válido para la cantidad de empleados.">
+
+      <!-- Sitio Web -->
+      <input type="url" placeholder="Sitio Web" 
+            pattern="https?://.*" 
+            title="Debe ingresar una URL válida (ejemplo: http://www.xyz.com).">
+
+      <!-- Logo de la Empresa -->
+      <input type="file" accept="image/*">
+
+      <!-- Representante Legal -->
+      <input type="text" placeholder="Representante Legal" 
+            pattern="^[A-Za-z\s]+$" 
+            title="Debe ingresar un nombre válido para el representante legal (solo letras y espacios).">
+
+      <!-- Estado de la Empresa -->
+      <select required>
+          <option value="" disabled selected>Seleccione Estado de la Empresa</option>
+          <option value="Activa">Activa</option>
+          <option value="Inactiva">Inactiva</option>
+          <option value="enLiquidacion">En Liquidación</option>
+      </select>
+
+      <!-- Fecha de Alta -->
+      <input type="date" placeholder="Fecha de Alta">
+
+      <!-- Notas Adicionales -->
+      <textarea placeholder="Notas Adicionales"></textarea>
+
+      <!-- Botón de Guardar -->
+      <button type="submit">Guardar Empresa</button>
+    </form>
+  </div>
+</body>
+</html>

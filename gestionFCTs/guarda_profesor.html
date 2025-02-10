@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir profesor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, button, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <div id="profeForm" class="">
+      <h2>Añadir Información del Profesor</h2>
+      <form>
+          <!-- Nombre Completo -->
+          <input type="text" placeholder="Nombre Completo" required
+                 pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+                 title="Debe ingresar un nombre válido (solo letras y espacios, mínimo 2 caracteres).">
+  
+          <!-- Número de Identificación -->
+          <input type="text" placeholder="Número de Identificación" required
+                 pattern="^[a-zA-Z0-9]{1,20}$" 
+                 title="Debe ingresar un identificador único válido (letras y números, hasta 20 caracteres).">
+  
+          <!-- Correo Electrónico -->
+          <input type="email" placeholder="Correo Electrónico" required
+                 pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+                 title="Debe ingresar un correo electrónico válido.">
+  
+          <!-- Número de Teléfono -->
+          <input type="tel" placeholder="Número de Teléfono" 
+                 pattern="^\(\+?[0-9]{1,4}\)\s?[0-9]{6,15}$" 
+                 title="Debe ingresar un número de teléfono válido (ejemplo: (+34) 612345678).">
+  
+          <!-- Dirección -->
+          <textarea placeholder="Dirección"></textarea>
+  
+          <!-- Fecha de Nacimiento -->
+          <input type="date" placeholder="Fecha de Nacimiento">
+  
+          <!-- Género -->
+          <select>
+              <option value="" disabled selected>Seleccione Género</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+              <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+          </select>
+  
+          <!-- Rol -->
+          <select required>
+              <option value="" disabled selected>Seleccione Rol</option>
+              <option value="Profesor">Profesor</option>
+              <option value="Coordinador">Coordinador</option>
+              <option value="Jefe de Departamento">Jefe de Departamento</option>
+          </select>
+  
+          <!-- Departamento o Área de Especialización -->
+          <select>
+              <option value="" disabled selected>Seleccione Departamento</option>
+              <option value="Matemáticas">Matemáticas</option>
+              <option value="Lengua">Lengua</option>
+              <option value="Ciencias Sociales">Ciencias Sociales</option>
+          </select>
+  
+          <!-- Tipo de Contrato -->
+          <select>
+              <option value="" disabled selected>Seleccione Tipo de Contrato</option>
+              <option value="Tiempo Completo">Tiempo Completo</option>
+              <option value="Medio Tiempo">Medio Tiempo</option>
+              <option value="Sustituto">Sustituto</option>
+          </select>
+  
+          <!-- Fecha de Ingreso -->
+          <input type="date" placeholder="Fecha de Ingreso">
+  
+          <!-- Estado del Profesor -->
+          <select required>
+              <option value="" disabled selected>Estado del Profesor</option>
+              <option value="Activo">Activo</option>
+              <option value="En licencia">En licencia</option>
+              <option value="Inactivo">Inactivo</option>
+          </select>
+  
+          <!-- Foto de Perfil -->
+          <input type="file" accept="image/*">
+  
+          <!-- Notas Adicionales -->
+          <textarea placeholder="Notas Adicionales"></textarea>
+  
+          <!-- Contraseña -->
+          <input type="password" placeholder="Contraseña" required
+                 pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                 title="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula, una letra minúscula, un número y un carácter especial.">
+          
+          <!-- Centro -->
+          <select required>
+            <option value="" disabled selected>Seleccione Centro Educativo</option>
+            <option value="IES Domenico Scarlatti">IES Domenico Scarlatti</option>
+            <option value="IES Domenico Scarlatii">IES Domenico Scarlatti</option>
+          </select>
+
+          <!-- Botón de Guardar -->
+          <button type="submit">Guardar Profesor</button>
+      </form>
+  </div>
+</body>
+</html>

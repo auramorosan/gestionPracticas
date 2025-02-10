@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        select{
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .estado-select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        // Datos simulados de la base de datos
+        const cursos = [
+            { id: 1, nombre: "DAW", alumnos: ["Ana", "Carlos", "Elena"] },
+            { id: 2, nombre: "DAM", alumnos: ["Luis", "Marta", "Pedro"] }
+        ];
+
+        function cargarCursos(){
+            let select = document.getElementById("cursoSelect");
+            select.innerHTML = "";
+            cursos.forEach(curso => {
+                let option = document.createElement("option");
+                option.value = curso.id;
+                option.textContent = curso.nombre;
+                select.appendChild(option);
+            });
+        }
+
+        function mostrarAlumnos(){
+            let select = document.getElementById("cursoSelect");
+            let cursoId = parseInt(select.value);
+            let curso = cursos.find(c => c.id === cursoId);
+            let listaAlumnos = document.getElementById("listaAlumnos");
+            listaAlumnos.innerHTML = "";
+
+            if (curso) {
+                curso.alumnos.forEach(alumno => {
+                    let li = document.createElement("li");
+                    
+                    let nombreSpan = document.createElement("span");
+                    nombreSpan.textContent = alumno;
+                    
+                    let estadoSelect = document.createElement("select");
+                    estadoSelect.classList.add("estado-select");
+                    estadoSelect.onchange = function() { manejarCambioEstado(this.value); };
+                    
+                    let estados = [
+                        "Pendiente asignacion practicas", "No realiza practicas", "Asignado a empresa", "Pendiente convenio", 
+                        "Pendiente relacion de alumnos", "Pendiente programa y horario", "Pendiente evaluacion empresa", 
+                        "Pendiente hojas de firma", "Pendiente envio documentacion", "Finalizadas"
+                    ];
+                    estados.forEach(estado => {
+                        let option = document.createElement("option");
+                        option.value = estado;
+                        option.textContent = estado;
+                        estadoSelect.appendChild(option);
+                    });
+                    
+                    li.appendChild(nombreSpan);
+                    li.appendChild(estadoSelect);
+                    listaAlumnos.appendChild(li);
+                });
+            }
+        }
+
+        function manejarCambioEstado(estado){
+            if(estado === "Asignado a empresa"){
+                window.location.href = "asignarEmpresa.html";
+            }
+            if(estado === "Pendiente convenio"){
+                window.location.href = "realizaConvenio.html";
+            }
+            if(estado === "Pendiente relacion de alumnos"){
+                window.location.href = "relacionAlumno.html";
+            }
+            if(estado === "Pendiente programa y horario"){
+                window.location.href = "programaHorario.html";
+            }
+        }
+
+        window.onload = cargarCursos;
+    </script>
+</head>
+<body>
+    <h2>Selecciona un curso</h2>
+    <select id="cursoSelect"></select>
+    <button onclick="mostrarAlumnos()">Mostrar Alumnos</button>
+    
+    <h3>Alumnos del curso:</h3>
+    <ul id="listaAlumnos"></ul>
+</body>
+</html>

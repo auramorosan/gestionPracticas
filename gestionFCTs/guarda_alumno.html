@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir alumno</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, button, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+</style>
+<!-- Formulario para añadir un alumno -->
+<div id="alumnoForm" class="">
+    <h2>Añadir Información de Alumnos</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <!-- ID del Alumno -->
+      <label for="id_alumno">ID del Alumno:</label>
+      <input type="text" id="id_alumno" placeholder="ID del Alumno" required
+             pattern="^[A-Za-z0-9]{1,20}$" 
+             title="Debe ingresar un identificador único válido (letras y números, hasta 20 caracteres)."><br><br>
+
+      <!-- Nombre Completo -->
+      <label for="nombre_completo">Nombre Completo:</label>
+      <input type="text" id="nombre_completo" placeholder="Nombre Completo" required
+             pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,100}$" 
+             title="Debe ingresar un nombre válido (solo letras y espacios, mínimo 2 caracteres)."><br><br>
+
+      <!-- Fecha de Nacimiento -->
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha_nacimiento" placeholder="Fecha de Nacimiento" required><br><br>
+
+      <!-- Género -->
+      <label for="genero">Género:</label>
+      <select id="genero">
+          <option value="" disabled selected>Seleccione Género</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+          <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+      </select><br><br>
+
+      <!-- Correo Electrónico -->
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" placeholder="Correo Electrónico" 
+             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+             title="Debe ingresar un correo electrónico válido."><br><br>
+
+      <!-- Número de Teléfono -->
+      <label for="telefono">Número de Teléfono:</label>
+      <input type="tel" id="telefono" placeholder="Número de Teléfono" 
+             pattern="^\(\+?[0-9]{1,4}\)\s?[0-9]{6,15}$" 
+             title="Debe ingresar un número de teléfono válido (ejemplo: (+34) 612345678)."><br><br>
+
+      <!-- Dirección -->
+      <label for="direccion">Dirección:</label>
+      <textarea id="direccion" placeholder="Dirección"></textarea><br><br>
+
+      <!-- Centro Educativo -->
+      <label for="centro_educativo">Centro Educativo:</label>
+      <select id="centro_educativo" required>
+          <option value="" disabled selected>Seleccione Centro Educativo</option>
+          <option value="instituto1">IES Domenico Scarlatti</option>
+          <option value="instituto2">IES Santiago Rusiñol</option>
+      </select><br><br>
+
+      <!-- Grado/Curso -->
+      <label for="grado_curso">Grado/Curso:</label>
+      <select id="grado_curso" required>
+          <option value="" disabled selected>Seleccione Grado/Curso</option>
+          <option value="1DAW">1º DAW</option>
+          <option value="2DAW">2º DAW</option>
+          <option value="1DAM">1º DAM</option>
+          <option value="2DAM">2º DAM</option>
+      </select><br><br>
+
+      <!-- Tutor -->
+      <label for="tutor">Tutor:</label>
+      <select id="tutor" required>
+          <option value="" disabled selected>Seleccione Tutor</option>
+          <option value="tutor1">Carmen Duran</option>
+          <option value="tutor2">Gregorio Vara</option>
+          <option value="tutor3">Alejandro Gonzalez</option>
+      </select><br><br>
+
+      <!-- Estado del Alumno -->
+      <label for="estado_alumno">Estado del Alumno:</label>
+      <select id="estado_alumno" required>
+          <option value="" disabled selected>Seleccione Estado</option>
+          <option value="Activo">Activo</option>
+          <option value="Suspendido">Suspendido</option>
+          <option value="Graduado">Graduado</option>
+      </select><br><br>
+
+      <!-- Fecha de Inscripción -->
+      <label for="fecha_inscripcion">Fecha de Inscripción:</label>
+      <input type="date" id="fecha_inscripcion" placeholder="Fecha de Inscripción" required><br><br>
+
+      <!-- Foto de Perfil -->
+      <label for="foto_perfil">Foto de Perfil:</label>
+      <input type="file" id="foto_perfil" accept="image/*"><br><br>
+
+      <!-- Notas Académicas -->
+      <label for="notas_academicas">Notas Académicas:</label>
+      <input type="text" id="notas_academicas" placeholder="Notas Académicas (Ej. 8.5 o A)"><br><br>
+
+      <!-- Observaciones/Comentarios -->
+      <label for="observaciones">Observaciones/Comentarios:</label>
+      <textarea id="observaciones" placeholder="Observaciones adicionales sobre el alumno"></textarea><br><br>
+
+      <!-- Botón de Guardar -->
+      <button type="submit">Guardar Alumno</button>
+  </form>
+  </div>
+</body>
+</html>
